@@ -26,20 +26,23 @@ public:
                 if(crr >= 0 && crr <= 1000){
                     for(auto a : nums){
                         if(crr - a < 0 || crr - a > 1000){
-                            vqueue.push(crr - a);
+                            if(crr - a == goal)
+                                return res + 1;
                         }else if(!visited[crr - a]){
                             vqueue.push(crr - a);
                             visited[crr - a] = 1;
                         }
                         if(crr + a > 1000 || crr + a < 0){
-                            vqueue.push(crr + a);
+                            if(crr + a == goal)
+                                return res + 1;
                         }else if(!visited[crr + a]){
                             vqueue.push(crr + a);
                             visited[crr + a] = 1;
                         }
                         int temp = (crr ^ a);
                         if(temp < 0 || temp > 1000){
-                            vqueue.push(temp);
+                            if(temp == goal)
+                                return res + 1;
                         }else if(!visited[temp]){
                             vqueue.push(temp);
                             visited[temp] = 1;
