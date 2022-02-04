@@ -1,7 +1,5 @@
 // @before-stub-for-debug-begin
-#include <vector>
-#include <string>
-#include <iostream>
+#include<bits/stdc++.h>
 #include "commoncppproblem90.h"
 
 using namespace std;
